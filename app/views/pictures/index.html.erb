@@ -11,7 +11,13 @@
                   <%= image_tag picture.image.url, class: "card-img-top"%> <% end %>
               </div>
               <div class="card-body">
-                <h4 class="card-text"><%= picture.content %></h4>
+                <div class="card-content">
+                    <% if picture.content.present? %>
+                      <h4><%= picture.content %></h4>
+                    <% else %>
+                      <h4>No Title</h4>
+                    <% end %>
+                </div>
                 <div class="article-data card-text">
                   <span><%= picture.id %></span>
                   <h5><%= picture.created_at.strftime('%Y年%-m月%-d日 %H:%M') %></h5>

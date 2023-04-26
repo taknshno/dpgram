@@ -36,6 +36,13 @@ html body {
   position: relative;
 }
 
+.icon-image {
+  float: left;
+  max-height: 40px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
 .alert-wrapper {
   position: absolute;
   top: 5px;
@@ -86,12 +93,6 @@ html body {
 .form-error-message li {
   margin: 0;
   padding-bottom: 5px;
-}
-
-.icon-image {
-  float: left;
-  margin-left: 10px;
-  margin-top: 5px;
 }
 
 .top_menu {
@@ -151,12 +152,17 @@ html body {
 
 .card-body {
   padding-top: 10px !important;
+  vertical-align: bottom;
 }
 
 .card-text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.card-content {
+  height: 35px;
 }
 
 .card-text span {
