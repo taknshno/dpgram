@@ -1,0 +1,2 @@
+class CreatePicture < ApplicationRecord
+end
