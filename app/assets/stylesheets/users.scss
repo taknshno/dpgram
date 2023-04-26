@@ -129,6 +129,58 @@ html body {
   margin-left: 5px;
 }
 
+.profile-edit-icon {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  justify-content: flex-start;
+}
+
+.profile-edit-icon img{
+  max-width: 150px;
+  max-height: 150px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+
+.profile-edit-icon h5{
+  padding: 10px 0;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  position: relative;
+}
+
+.profile-edit-wrapper {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  margin: 16px auto;
+  position: relative;
+}
+
+.profile-edit-list {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+.profile-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 16px auto;
+}
+
 .button-wrapper {
   padding-top: 20px;
 }

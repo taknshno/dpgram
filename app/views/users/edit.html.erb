@@ -1,0 +1,34 @@
+<% content_for(:title, 'プロフィールの編集') %>
+<div class="profile-wrapper">
+  <%= form_with(model: @user, local: true) do |f| %>
+    <div class="profile-edit-wrapper">
+      <div class="profile-edit-icon">
+        <div>
+          <%if @user.image.present? %>
+            <%= image_tag picture.image.url %>
+          <% else %>
+            <%= image_tag "default_icon.png" %>
+          <% end %>
+        </div>
+        <h5>アイコンを更新</h5>
+      </div>
+      <div class="profile-edit-list">
+        <div class="input-group-lg input-container">
+          <%= f.text_field :name, placeholder:"名前", class:"form-control form-control-lg", required: true %>
+        </div>
+        <div class="input-group-lg input-container">
+          <%= f.email_field :email, placeholder:"メールアドレス", class:"form-control form-control-lg", required: true %>
+        </div>
+        <div class="input-group-lg input-container">
+          <%= f.password_field :password, placeholder:"パスワード", class:"form-control form-control-lg", required: true %>
+        </div>
+        <div class="input-group-lg input-container">
+          <%= f.password_field :password_confirmation, placeholder:"パスワード(再確認)", class:"form-control form-control-lg", required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <%= f.submit "編集する", class:"btn btn-primary btn-lg w-50" %>
+    </div>
+  <% end %>
+</div>

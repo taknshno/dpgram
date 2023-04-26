@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[show edit update]
+
   def new
     @user = User.new
   end
@@ -15,7 +17,24 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      flash[:success] = "プロフィールを編集しました"
+    else
+      flash[:danger] = "プロフィールの編集に失敗しました"
+      render :edit
+    end
+  end
+
+  private
+
+  def set_user
+    @user= User.find(params[:id])
   end
 
   def user_params
