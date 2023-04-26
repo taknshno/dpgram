@@ -1,0 +1,134 @@
+html body {
+  background-color: #ffffff !important;
+}
+
+.signup-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.signup-form {
+  padding: 16px 10px 0;
+}
+
+.signup-title h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.signup-title span {
+  display: block;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgb(96, 103, 112);
+}
+
+.signup-input {
+  margin-bottom: 14px;
+}
+
+.profile-wrapper {
+  max-width: 700px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+.profile-wrapper h2 {
+  display: block;
+  padding: 6px 0 16px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.profile-header {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.profile-icon {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: center;
+  margin-right: 30px;
+  position: relative;
+}
+
+.profile-icon img {
+  height: auto;
+  width: 150px;
+  position: absolute;
+
+}
+
+.profile-list {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  flex-shrink: 1;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.profile-list ul {
+  list-style-type: none;
+}
+
+.profile-list li {
+  display: list-item;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.profile-list h4 {
+  display: block;
+  float: left;
+  width: 190px;
+  margin: 0;
+  padding: 0 5px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+}
+
+.profile-list span {
+  display: block;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.profile-tab {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  justify-content: center;
+  position: relative;
+  font-weight: 600;
+  border-top: 1px solid rgb(219, 219, 219)
+}
+
+.profile-tab-item {
+  margin: 15px 0px;
+}
+
+.profile-tab-item span{
+  margin-left: 5px;
+}
+
+.button-wrapper {
+  padding-top: 20px;
+}
