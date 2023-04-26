@@ -1,0 +1,42 @@
+<% content_for(:title, '投稿内容の確認') %>
+<div class="show-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+          <%= form.hidden_field :image_cache %>
+          <%= form.hidden_field :content %>
+          <div>
+            <div class="article-container">
+              <div class="article-header">
+                <div class="article-data">
+                  <strong><span><%= @picture.user.name %></span></strong>
+                </div>
+              </div>
+              <div>
+                <div class="article-content">
+                  <h4><%= @picture.content %></h4>
+                </div>
+                <div class="article-img-preview">
+                  <%= image_tag @picture.image.url %>
+                </div>
+              </div>
+            </div>
+            <div class="button-container">
+              <%= form.submit  "投稿する", class:"btn btn-primary btn-lg w-100" %>
+            </div>
+          </div>
+        <% end %>
+        <%= form_with(model: @picture, url:new_picture_path, local:true, method:"get") do |form| %>
+          <div class="button-container">
+            <%= form.hidden_field :image_cache %>
+            <%= form.hidden_field :content %>
+            <%= form.submit "編集に戻る", name: 'back', class:"btn btn-secondary btn-lg w-50" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="back-button">
+      </div>
+    </div>
+  </div>
+</div>
