@@ -1,0 +1,45 @@
+<% content_for(:title, formtitle) %>
+<div class="col-12 col-md-6 px-0 pb-2">
+  <%= form_with(model: @picture, local: true, url: choose_new_or_edit ) do |form| %>
+    <%= form.hidden_field :image_cache %>
+    <%= form.hidden_field :content %>
+    <div class="post-img-preview" id="prv">
+      <% if @picture.image && @picture.image.url %>
+        <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+      <% else %>
+        <h5>ここに選択した画像が表示されます</h5>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 px-0 pl-md-3 pb-2">
+    <div class="post-form">
+      <div class="input-container post-title">
+        <h4>
+          <%= formtitle %>
+        </h4>
+        <% if @picture.errors.any? %>
+          <div class="form-error-message">
+            <h5>以下のエラーがあります。</h5>
+            <div id="error_explanation">
+              <ul>
+                <% @picture.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+        <div class="form-container">
+          <div class="input-container">
+            <%= form.file_field :image, class:"form-control post-file-field", placeholder:"画像を選択する" %>
+          </div>
+          <div class="input-container">
+            <%= form.text_area :content, rows: 3, placeholder:"コメントを入力（最大100文字）", class:"form-control form-control-lg" %>
+          </div>
+          <div class="button-container">
+            <%= form.submit btnlabel, class:"btn btn-primary btn-lg w-100" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

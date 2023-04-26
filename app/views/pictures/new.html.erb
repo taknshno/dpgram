@@ -1,11 +1,7 @@
-<%= form_with(model: @picture, local: true) do |form| %>
-  <div>
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+<div class="post-wrapper">
+  <div class="container-fluid">
+    <div class="row justify-content-between">
+      <%= render partial: "form", locals: { formtitle: "投稿の作成", btnlabel:"投稿する" } %>
+    </div>
   </div>
-  <div>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+</div>
