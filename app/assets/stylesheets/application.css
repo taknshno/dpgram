@@ -284,26 +284,26 @@ html body {
 
 .post-img-preview {
   padding: 6px 8px 6px;
-  min-height: 380px;
+  height: 380px;
   color: #050505;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   object-fit: cover;
   display: flex;
-  text-align: center;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .post-img-preview h5 {
-  display: inline-block;
   margin: 0;
   width: 100%;
 }
 
 .post-img-preview img {
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
 }
 
 .post-form {
@@ -409,6 +409,7 @@ html body {
 .article-img-preview {
   display: block;
   position: relative;
+  text-align: center;
 }
 
 .article-img-preview img {
