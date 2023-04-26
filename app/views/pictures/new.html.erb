@@ -1,9 +1,9 @@
 <%= form_with(model: @picture, local: true) do |form| %>
-  <div class="picture_image">
+  <div>
     <%= form.label :image %>
-    <%= form.file_input :image %>
+    <%= form.file_field :image %>
   </div>
-  <div class="picture_content">
+  <div>
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
