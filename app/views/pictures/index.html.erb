@@ -25,10 +25,10 @@
                 <div class="card-button">
                   <%= link_to picture_path(picture.id) do %>
                     <span class="bi bi-info-square" title="詳細"></span><% end %>
-
-                    <span class="bi bi-pencil-square" title="編集不可"></span>
-                    <span class="bi bi-trash" title="削除不可"></span>
-
+                    <%= link_to edit_picture_path(picture.id), data:{confirm:"こちらの投稿を編集しますか？"} do %>
+                      <span class="bi bi-pencil-square" title="編集"></span><% end %>
+                    <%= link_to picture_path(picture.id), method: :delete, data:{confirm:"こちらの投稿を削除しますか？"} do %>
+                      <span class="bi bi-trash" title="削除"></span><% end %>
                 </div>
               </div>
             </div>
