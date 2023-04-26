@@ -1,0 +1,18 @@
+<header class="header clearfix">
+  <%= link_to pictures_path do %>
+    <%= image_tag '/assets/dp_icon.jpg', class: 'icon-image' %>
+  <% end %>
+  <div class="top_menu clearfix">
+    <ul>
+      
+        <li><%= link_to 'ホーム', pictures_path %></li>
+        <li><%= link_to '投稿する', new_picture_path %></li>
+        <li>profile</li>
+        <li>logout</li>
+      
+        <li>signup</li>
+        <li>login</li>
+      
+    </ul>
+  </div>
+</header>
