@@ -2,7 +2,11 @@
 <div class="profile-wrapper">
   <div class="profile-header">
     <div class="profile-icon">
-      <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
+      <% if @user.image && @user.image.url %>
+        <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
+      <% else %>
+        <%= image_tag "default_icon.png" %>
+      <% end %>
     </div>
     <section class="profile-list">
       <ul>
@@ -17,7 +21,6 @@
         <li>
           <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %>
         </li>
-
       </ul>
     </section>
   </div>
