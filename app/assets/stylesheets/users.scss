@@ -153,6 +153,22 @@ html body {
   position: relative;
 }
 
+.profile-edit-icon label {
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 40px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.profile-edit-icon label:hover {
+  text-decoration: underline;
+}
+
+.profile-edit-icon input {
+  display: none;
+}
+
 .profile-edit-wrapper {
   align-items: stretch;
   display: flex;

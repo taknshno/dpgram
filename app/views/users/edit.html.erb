@@ -1,34 +1,51 @@
 <% content_for(:title, 'プロフィールの編集') %>
 <div class="profile-wrapper">
-  <%= form_with(model: @user, local: true) do |f| %>
+  <%= form_with(model: @user, local: true) do |form| %>
+    <%= form.hidden_field :image_cache %>
+    <%= form.hidden_field :name %>
+    <%= form.hidden_field :email %>
     <div class="profile-edit-wrapper">
       <div class="profile-edit-icon">
-        <div>
-          <%if @user.image.present? %>
-            <%= image_tag picture.image.url %>
+        <div id="prv">
+          <% if @user.image && @user.image.url %>
+            <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
           <% else %>
             <%= image_tag "default_icon.png" %>
           <% end %>
         </div>
-        <h5>アイコンを更新</h5>
+        <label>
+          <%= form.file_field :image, class:"form-control post-file-field", id:"picture_image" %>アイコンを更新
+        </label>
       </div>
       <div class="profile-edit-list">
         <div class="input-group-lg input-container">
-          <%= f.text_field :name, placeholder:"名前", class:"form-control form-control-lg", required: true %>
+          <%= form.text_field :name, placeholder:"名前", class:"form-control form-control-lg", required: true %>
         </div>
         <div class="input-group-lg input-container">
-          <%= f.email_field :email, placeholder:"メールアドレス", class:"form-control form-control-lg", required: true %>
+          <%= form.email_field :email, placeholder:"メールアドレス", class:"form-control form-control-lg", required: true %>
         </div>
         <div class="input-group-lg input-container">
-          <%= f.password_field :password, placeholder:"パスワード", class:"form-control form-control-lg", required: true %>
+          <%= form.password_field :password, placeholder:"パスワード", class:"form-control form-control-lg", required: true %>
         </div>
         <div class="input-group-lg input-container">
-          <%= f.password_field :password_confirmation, placeholder:"パスワード(再確認)", class:"form-control form-control-lg", required: true %>
+          <%= form.password_field :password_confirmation, placeholder:"パスワード(再確認)", class:"form-control form-control-lg", required: true %>
         </div>
       </div>
     </div>
     <div class="button-container">
-      <%= f.submit "編集する", class:"btn btn-primary btn-lg w-50" %>
+      <%= form.submit "編集する", class:"btn btn-primary btn-lg w-50" %>
     </div>
   <% end %>
 </div>
+<% if @user.errors.any? %>
+  <div class="form-error-message">
+    <h5>以下のエラーがあります。</h5>
+    <div id="error_explanation">
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

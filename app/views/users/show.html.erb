@@ -2,11 +2,7 @@
 <div class="profile-wrapper">
   <div class="profile-header">
     <div class="profile-icon">
-      <%if @user.image.present? %>
-        <%= image_tag picture.image.url %>
-      <% else %>
-        <%= image_tag "default_icon.png" %>
-      <% end %>
+      <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
     </div>
     <section class="profile-list">
       <ul>
