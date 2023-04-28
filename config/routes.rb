@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   root to: 'pictures#index'
 
   resources :pictures do
