@@ -4,15 +4,15 @@
   <% end %>
   <div class="top_menu clearfix">
     <ul>
-      
+      <% if logged_in? %>
         <li><%= link_to 'ホーム', pictures_path %></li>
         <li><%= link_to '投稿する', new_picture_path %></li>
-        <li>profile</li>
-        <li>logout</li>
-      
+        <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
+        <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+      <% else %>
         <li><%= link_to "サインアップ", new_user_path %></li>
-        <li>login</li>
-      
+        <li><%= link_to "ログイン", new_session_path %></li>
+      <% end %>
     </ul>
   </div>
 </header>
