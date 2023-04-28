@@ -1,0 +1,48 @@
+html body {
+  background-color: #ffffff !important;
+}
+
+.hidden-box {
+  height: 70px;
+}
+
+.content {
+  padding: 0 !important;
+}
+
+.login-wrapper {
+  background-color: #f0f2f5;
+}
+
+.login-content {
+  max-width: 800px;
+  min-height: 500px;
+  padding: 80px 0 100px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.login-title {
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.login-title-logo {
+  padding-bottom: 16px;
+  display: block;
+}
+
+.login-title h4 {
+  display: inline-block;
+}
+
+.login-form-box {
+  width: 400px;
+}
+
+.login-content h4 {
+  text-align: center;
+  color: #333;
+  margin-left: 15px;
+}

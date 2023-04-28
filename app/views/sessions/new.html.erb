@@ -1,2 +1,57 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dpgram ログイン/新規登録</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'normalize', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content clearfix">
+        <%= render 'layouts/flash_message' %>
+        <div class="login-wrapper">
+          <div class="login-content">
+            <div class="d-flex align-items-center justify-content-center flex-wrap">
+              <div class="flex-fill">
+                <div class="login-title">
+                  <div class="login-title-logo">
+                    <%= image_tag '/assets/dp_logo.png', class:"img-fluid" %>
+                  </div>
+                  <h4>写真の投稿ができるwebサイト</h4>
+                </div>
+              </div>
+              <div class="flex-fill">
+                <div class="form-box login-form-box">
+                  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+                    <div class="form-container">
+                      <div class="input-group  input-group-lg input-container">
+                        <%= f.email_field :email, placeholder:"メールアドレス", class:"form-control form-control-lg" %>
+                      </div>
+                      <div class="input-container">
+                        <%= f.password_field :password, placeholder:"パスワード", class:"form-control form-control-lg" %>
+                      </div>
+                    </div>
+                    <div class="button-container">
+                      <%= f.submit "ログイン", class:"btn btn-primary btn-lg w-100" %>
+                    </div>
+                  <% end %>
+                  <div class="form-border"></div>
+                  <div class="button-container">
+                    <%= button_to "アカウントを作成", new_user_path, method: :get, class:"btn btn-success btn-lg w-75" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%= render 'layouts/footer' %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
