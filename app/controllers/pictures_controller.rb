@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[show edit update destroy]
+  before_action :current_user_checked, only: %i[edit update]
 
   def index
     @pictures = Picture.all
@@ -14,7 +15,6 @@ class PicturesController < ApplicationController
   end
 
   def create
-    #@picture = Picture.new(picture_params)
     @picture = current_user.pictures.build(picture_params)
     if params[:back]
       render :new
@@ -51,7 +51,6 @@ class PicturesController < ApplicationController
   end
 
   def confirm
-    #@picture = Picture.new(picture_params)
     @picture = current_user.pictures.build(picture_params)
     if @picture.invalid?
       flash[:danger] = "入力に誤りがあります"
