@@ -14,8 +14,8 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(picture_params)
-    # @picture = current_user.pictures.build(picture_params)
+    #@picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     if params[:back]
       render :new
     else
@@ -51,8 +51,8 @@ class PicturesController < ApplicationController
   end
 
   def confirm
-    @picture = Picture.new(picture_params)
-    #@picture = current_user.pictures.build(picture_params)
+    #@picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     if @picture.invalid?
       flash[:danger] = "入力に誤りがあります"
       render :new

@@ -1,3 +1,4 @@
+<% content_for(:title, 'dpgram') %>
 <div class="show-wrapper">
   <div class="container-fluid">
     <div class="article-container">
@@ -8,12 +9,12 @@
             <h5><%= @picture.created_at.strftime('%Y年%-m月%-d日 %H:%M') %></h5>
           </div>
           <div class="article-edit-icon">
-            
+            <% if @picture.user.id == current_user.id %>
               <%= link_to edit_picture_path(@picture.id), data:{confirm:"こちらの投稿を編集しますか？"} do %>
                 <span class="bi bi-pencil-square" title="編集"></span><% end %>
               <%= link_to picture_path(@picture.id), method: :delete, data:{confirm:"こちらの投稿を削除しますか？"} do %>
                 <span class="bi bi-trash" title="削除"></span><% end %>
-            
+            <% end %>
           </div>
         </div>
       </div>
