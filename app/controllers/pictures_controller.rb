@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
     else
       if @picture.save
         PostingMailer.posting_mail(@picture).deliver
-        flash[:success] = "写真を投稿しました"
+        flash[:success] = "画像を投稿しました"
         redirect_to pictures_path
       else
         flash[:danger] = "入力に誤りがあります"
@@ -31,6 +31,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   def edit

@@ -14,6 +14,14 @@
                 <span class="bi bi-pencil-square" title="編集"></span><% end %>
               <%= link_to picture_path(@picture.id), method: :delete, data:{confirm:"こちらの投稿を削除しますか？"} do %>
                 <span class="bi bi-trash" title="削除"></span><% end %>
+            <% else %>
+              <% if @favorite.present? %>
+                <%= link_to favorite_path(id: @favorite.id), method: :delete do %>
+                <span class="bi bi-heart-fill" title="お気に入り解除する"></span><% end %>
+              <% else %>
+              <%= link_to favorites_path(picture_id: @picture.id), method: :post do %>
+                <span class="bi bi-heart" title="お気に入り登録する"></span><% end %>
+              <% end %>
             <% end %>
           </div>
         </div>
