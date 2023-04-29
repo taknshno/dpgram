@@ -20,6 +20,7 @@ class PicturesController < ApplicationController
       render :new
     else
       if @picture.save
+        PostingMailer.posting_mail(@picture).deliver
         flash[:success] = "写真を投稿しました"
         redirect_to pictures_path
       else

@@ -1,9 +1,7 @@
-<h1>画像が投稿されました</h1>
+<strong><%= @picture.user.name %></strong> さんの画像が投稿されました。
 
-<h4>name: <%= @posting.user.name %></h4>
+<p>[投稿内容]</p>
 
-<h4>投稿内容の確認</h4>
+<p><strong>画像(ファイル名):</strong> <%= @picture.image.filename %></p>
 
-<p>画像(ファイル名): <%= @posting.image %></p>
-
-<p>content: <%= @posting.content %></p>
+<p><strong>コメント:</strong> <%= @picture.content %></p>
