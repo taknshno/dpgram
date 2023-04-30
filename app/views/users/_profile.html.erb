@@ -1,14 +1,14 @@
 <div class="profile-header">
 <div class="container-fluid">
 <div class="row justify-content-between">
-  <div class="profile-icon col-12 col-lg-4 mb-4">
+  <div class="profile-icon col-12 col-sm-4 mb-4">
     <% if @user.image && @user.image.url %>
       <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
     <% else %>
       <%= image_tag "default_icon.png" %>
     <% end %>
   </div>
-  <section class="profile-list col-12 col-lg-8">
+  <section class="profile-list col-12 col-sm-8">
     <ul>
       <li>
         <h4>名前</h4>
@@ -20,7 +20,7 @@
       </li>
       <li>
 
-        <%= button_to "プロフィールを編集する", edit_user_path, method: :get, class:"btn btn-light edit-btn w-50" %>
+        <%= button_to "プロフィール編集", edit_user_path, method: :get, class:"btn btn-light edit-btn w-50" %>
       </li>
     </ul>
   </section>
