@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user.id)
+      session[:user_id] = @user.id
       flash[:success] = "アカウントを作成しました"
+      redirect_to pictures_path
     else
       flash[:danger] = "入力に誤りがあります"
       render :new
