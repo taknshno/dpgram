@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[show edit update destroy]
-  before_action :current_user_checked, only: %i[edit update]
+  before_action :picture_user_check, only: %i[edit update]
 
   def index
     @pictures = Picture.all
@@ -68,5 +68,12 @@ class PicturesController < ApplicationController
 
   def picture_params
     params.require(:picture).permit(:image, :image_cache, :content)
+  end
+
+  def picture_user_check
+    if current_user.id != @picture.user.id
+      flash[:danger]="アクセスができません"
+      redirect_to pictures_path
+    end
   end
 end

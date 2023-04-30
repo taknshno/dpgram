@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :login_required, only: %i[new create]
   before_action :set_user, only: %i[show edit update fav_index]
-  before_action :current_user_checked, only: %i[show edit update fav_index]
+  before_action :user_check, only: %i[show edit update fav_index]
 
   def new
     @user = User.new
@@ -47,5 +47,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :image_cache)
+  end
+
+  def user_check
+    if current_user.id != @user.id
+      flash[:danger]="アクセスができません"
+      redirect_to pictures_path
+    end
   end
 end
