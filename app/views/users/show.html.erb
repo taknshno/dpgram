@@ -1,30 +1,13 @@
 <% content_for(:title, 'プロフィール') %>
 <div class="profile-wrapper">
-  <div class="profile-header">
-    <div class="profile-icon">
-      <% if @user.image && @user.image.url %>
-        <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
-      <% else %>
-        <%= image_tag "default_icon.png" %>
-      <% end %>
+  <%= render 'profile' %>
+  <div class="profile-tab">
+    <div class="profile-tab-item tab-selected">
+      <i class="bi bi-border"></i><span>自分の投稿</span>
     </div>
-    <section class="profile-list">
-      <ul>
-        <li>
-          <h4>名前</h4>
-          <span><%= @user.name %></span>
-        </li>
-        <li>
-          <h4>メールアドレス</h4>
-          <span><%= @user.email %></span>
-        </li>
-        <li>
-          <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %>
-        </li>
-        <li>
-          <%= link_to 'お気に入りした画像を見る', fav_index_user_path(@user.id) %>
-        </li>
-      </ul>
-    </section>
+    <div class="profile-tab-item">
+      <%= link_to fav_index_user_path do %>  
+        <i class="bi bi-bookmark-heart"></i><span>お気に入り</span><% end %>
+    </div>
   </div>
 </div>

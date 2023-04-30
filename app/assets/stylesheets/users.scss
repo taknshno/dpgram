@@ -28,7 +28,7 @@ html body {
 }
 
 .profile-wrapper {
-  max-width: 700px;
+  max-width: 900px;
   padding-top: 30px;
   margin: 0 auto;
 }
@@ -42,22 +42,13 @@ html body {
 }
 
 .profile-header {
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
-  flex-shrink: 0;
-  margin-bottom: 40px;
+  max-width: 700px;
+  margin: 0 auto 40px;
   position: relative;
 }
 
 .profile-icon {
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  flex-grow: 1;
-  flex-shrink: 0;
-  justify-content: center;
-  position: relative;
 }
 
 .profile-icon img {
@@ -70,19 +61,14 @@ html body {
 }
 
 .profile-list {
-  align-items: stretch;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 5;
-  flex-shrink: 1;
+  width: 400px;
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .profile-list ul {
   list-style-type: none;
+  padding: 0 20px;
 }
 
 .profile-list li {
@@ -104,6 +90,7 @@ html body {
 }
 
 .profile-list span {
+  overflow: hidden;
   display: block;
   font-size: 20px;
   line-height: 24px;
@@ -123,11 +110,16 @@ html body {
 }
 
 .profile-tab-item {
-  margin: 15px 0px;
+  margin: 15px 60px 0 15px;
+  color: #737373;
 }
 
-.profile-tab-item span{
+.profile-tab-item span {
   margin-left: 5px;
+}
+
+.tab-selected {
+  color: #000000;
 }
 
 .profile-edit-icon {
@@ -200,4 +192,9 @@ html body {
 
 .button-wrapper {
   padding-top: 20px;
+}
+
+.edit-btn {
+  color: #000000 !important;
+  font-weight: 600 !important; 
 }
