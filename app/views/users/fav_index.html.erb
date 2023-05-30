@@ -1,13 +1,7 @@
-<% content_for(:title, 'お気に入り登録した画像') %>
-<div class="profile-wrapper">
-  <%= render 'profile' %>
-  <div class="profile-tab">
-    <div class="profile-tab-item">
-      <i class="bi bi-border"></i><span>自分の投稿</span>
-    </div>
-    <div class="profile-tab-item tab-selected">
-      <i class="bi bi-bookmark-heart"></i><span>お気に入り</span>
-    </div>
-  </div>
-  <%= render 'layouts/pictures_index', { pictures: @favorites } %>
-</div>
+開発用ブランチを作成し、その上で作業をすること
+ステップを一つ終えるごとに、課題投稿欄のコメントで、メンターにステップが完了した旨を報告をすること
+報告する際に、作業したブランチ名をコメントに記載すること（メンターは完了しているところまでを確認し、レビューをします。）
+レビュー待ちの状態でも次以降のステップを進めていて構わない。しかし、ブランチはmasterからのみ作成し、孫ブランチは作成しないこと
+レビュー後、修正依頼が出た場合は指定された箇所を修正し、再度課題投稿欄のコメントでメンターに修正が完了した旨を報告をすること
+ひとつのステップが終わったら、必ず報告とレビュー依頼を課題の投稿欄にコメントしてください。
+ステップは1〜5まで設定されており、さらにその先にオプション要件が1〜10まであります。
